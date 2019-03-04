@@ -1,0 +1,45 @@
+场景
+在应用部署过程中，会遇到这样的问题：前期需要root用户执行配置、初始化工作，而具体的业务应用需要使用非root用户启动。 
+如何解决呢？
+
+方法
+可以使用sudo，实现授权。 
+sudo命令授权，既可以使非超级用户执行超级用户的命令，也可以让超级用户以普通用户身份执行程序。
+
+上面场景的解决方案具体步骤如下。
+
+配置/etc/sudoers
+在文件末尾添加：
+
+root ALL=(lanyang) /data/servers/orange-agent/control
+
+表示root被授权，在任何机器上，执行命令/data/servers/orange-agent/control时，使用langyang用户。
+
+授权的语法格式：
+
+user machine=command
+
+表示user被授权在哪些machine，以什么身份(默认root)，执行command。
+
+修改/etc/sudoers文件一般有两种方法。
+
+方法一 使用visudo
+
+可以使用visudo命令，命令行直接输入visudo，打开的就是/etc/sudoers文件，修改后，visudo会进行语法检查，并提示错误；
+1
+方法二 直接编辑
+
+为了安全考虑，/etc/sudoers文件只有读权限，首先需要增加文件写权限。
+
+$ chmod u+w /etc/sudoers
+1
+修改完成后，记得收回权限：
+
+$ chmod u-w /etc/sudoers
+1
+启动应用
+配置完成后，root用户执行如下命令：
+
+$ sudo –u lanyang /data/servers/orange-agent/control start
+1
+这样应用程序就是以lanyang用户启动的。
