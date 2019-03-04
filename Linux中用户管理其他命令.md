@@ -1,0 +1,13 @@
+- su username
+- su
+- Whoami
+    - 我是谁？显示当前登录用户名
+- id imooc
+    - 显示指定用户信息，包括用户编号、用户名
+    - 主要组编号及名称，附属组列表
+- groups imooc
+    - 显示imooc用户所在的用户组
+- chfn imooc
+    - 设置用户资料，依次输入用户资料即可
+- finger imooc
+    - 显示用户详细资料
