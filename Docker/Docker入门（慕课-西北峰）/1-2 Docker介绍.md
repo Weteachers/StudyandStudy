@@ -5,4 +5,5 @@
   - 可以粗糙地理解为轻量级的虚拟机
   - 开挂的chroot
 - 确实不是虚拟机
-  - [VM vs. Docker](https://github.com/Weteachers/jupyter_github.github.io/blob/master/Images/Docker/VMvs.Docker.jpg)
+  - [VM vs. Docker](https://github.com/Weteachers/jupyter_github.github.io/blob/master/Images/Docker/VMvs.Docker.jpg?raw=true)
+  
