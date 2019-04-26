@@ -1,0 +1,3 @@
+- wget -qO- https://get.docker.com | sh
+- sudo usermod -aG docker xxx
+  - 把xxx用户添加到docker用户中，使得普通用户也可以运行docker
